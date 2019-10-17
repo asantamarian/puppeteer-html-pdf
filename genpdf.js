@@ -4,15 +4,15 @@ async function generatePDF() {
   
   const browser = await puppeteer.launch({ ignoreHTTPSErrors: true,headless: true });
   const page = await browser.newPage();
-  await page.goto('https://demodede.pchr.cl', {waitUntil: 'networkidle2'});
+  await page.goto('http://localhost:3335/Desempeno/Informe/exportDesempeno?pdf=1', {waitUntil: 'networkidle2'});
   await page.emulateMedia('screen');
   
   const pdf = await page.pdf({ 
-    path:"output.pdf",
-    format: 'Letter',
+    path:"dd.pdf",
+    //format: 'A4',
     printBackground:true,
-    PreferCSSPageSize: true,
-    width: '1024px' , height: '768px'
+    width: '1200px' , height: '1980px',
+    landscape:true
     }
       );
  
