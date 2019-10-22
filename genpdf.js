@@ -11,8 +11,8 @@ async function generatePDF() {
     path:"dd.pdf",
     //format: 'A4',
     printBackground:true,
-    width: '1200px' , height: '1980px',
-    landscape:true
+    width: '1980px' , height: '1080px',
+    landscape:false
     }
       );
  
